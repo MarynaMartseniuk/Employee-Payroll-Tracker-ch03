@@ -31,7 +31,7 @@ const collectEmployees = function() {
       const newEmpl = {
         firstName: firstName,
         lastName: lastName,
-        salary: salary
+        salary: convrtSalary
       };
        // console.log(newEmpl);
           // while.step.3.1 add new element ('newEmpl' type of object) to the end 
@@ -44,7 +44,7 @@ const collectEmployees = function() {
       const newEmpl = {
         firstName: firstName,
         lastName: lastName,
-        salary: "0"
+        salary: 0
       };
        // console.log(newEmpl);
           // while.step.3.2 add new element ('newEmpl' type of object) to the end 
