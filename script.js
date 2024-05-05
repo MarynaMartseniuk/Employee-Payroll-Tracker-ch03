@@ -4,49 +4,48 @@ let newEmpLArray = [];
 
 // Collect employee data
 const collectEmployees = function() {
-  // TODO: Get user input to create and return an array of employee objects
-  let a = "y"; // 'a' indicates 'y' for 'yes - I whant to add new Employee'
+   // TODO: Get user input to create and return an array of employee objects
+  let addNewEmpl = true; // 'addNewEmpl = true' for user wants to add anew employee.
  
-  // while user did not change 'y' ('yes') , keep getting input 
-  // for a next new Employee 
-  while (a === "y") {
+   // while user did not change 'addNewEmpl = true' , keep getting input 
+   // for a next new Employee:
+  while (addNewEmpl === true) {
 
-  //while.step.1  get from a user info: an input (using prompt method) for 
-  // First Name, Last Name and Salary. Stor the input in consts 
-  // 'firstName', 'lastName', 'salary'.
+     //while.step.1  get from a user info: an input (using prompt method) for 
+     // First Name, Last Name and Salary. Stor the input in consts 
+     // 'firstName', 'lastName', 'salary':
     const firstName = window.prompt("Add Employee's First Name");
-  //console.log(firstName);
     const lastName = window.prompt("Add Employee's Last Name");
     const salary = window.prompt("Add Employee's Salary, $");
 
-  // while.step.2  put the info that just has been gotten into 
-  // a sonst 'newEmpl' type of object
+     // while.step.2  put the info (that just has been gotten) into 
+     // a sonst 'newEmpl' type of object:
     const newEmpl = {
       firstName: firstName,
       lastName: lastName,
       salary: salary
     };
 
-  // while.step.3 add new element ('newEmpl' type of object) to the end 
-  // off the array ('newEmpLArray'). So we adding a new element to our array.
-  // Resault: we got info for a new line in a table that contains 
-  // Fist Name, Last Name and Salary of a new Employee. 
-    newEmpLArray.push(newEmpl);
-  //console.log(newEmpLArray);
+     // while.step.3 add new element ('newEmpl' type of object) to the end 
+     // off the array ('newEmpLArray'). So we adding a new element to our array.
+     // Resault: we got info for a new line in a table that contains 
+     // Fist Name, Last Name and Salary of a new Employee. 
+     newEmpLArray.push(newEmpl);
+     //console.log(newEmpLArray);
 
-  // while.step.4 ask a user if a there ia a next new Employee who should be added
-  // if user input is 'y' (variable 'a' got a new value of 'y') then 
-  // steps##1-4 will be repeated again;
-  // if user input is not 'y' (variable 'a' got a new value than is not 'y') then
-  // 'while (a === "y") {}' is done and next step of code will be executed  (which
-  // is 'return newEmpLArray;' of 'collectEmployees = function()' ).
-    a = window.prompt("Wuold you like to add one more employeer? (y/n)");
+     // while.step.4 ask a user if a there ia a next new Employee who should be added
+     // if user input is 'y' (variable 'a' got a new value of 'y') then 
+     // steps##1-4 will be repeated again;
+     // if user input is not 'y' (variable 'a' got a new value than is not 'y') then
+     // 'while (a === "y") {}' is done and next step of code will be executed  (which
+     // is 'return newEmpLArray;' of 'collectEmployees = function()' ).
+     addNewEmpl = window.confirm("Wuold you like to add one more employeer?");
+     console.log(addNewEmpl);
   }
 
   // return to the 'const collectEmployees' the value of 
   // array 'newEmpLArray' which is the final updated list of Employees as for now.
-  // return;
-  return newEmpLArray;
+    return newEmpLArray;
 }
 
 
