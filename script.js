@@ -1,6 +1,7 @@
 // Get a reference to the #add-employees-btn element
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
 let newEmpLArray = [];
+// console.log(newEmpLArray);
 
 // Collect employee data
 const collectEmployees = function() {
@@ -17,36 +18,52 @@ const collectEmployees = function() {
     const firstName = window.prompt("Add Employee's First Name");
     const lastName = window.prompt("Add Employee's Last Name");
     const salary = window.prompt("Add Employee's Salary, $");
+     
+     // while.step.2 convert "salary" string type value into number type value.
+    const convrtSalary = Number(salary);
+     // console.log(typeof convrtSalary);
+     // console.log(convrtSalary);
 
-     // while.step.2  put the info (that just has been gotten) into 
-     // a sonst 'newEmpl' type of object:
-    const newEmpl = {
-      firstName: firstName,
-      lastName: lastName,
-      salary: salary
+     // while.step.3 if value of a salary from the user input is 
+     // eqeul to the convert value (example: "1" equel 1), 
+    if (convrtSalary == salary) {
+     // then return to a sonst 'newEmpl' (type of object) values of the user's input:
+      const newEmpl = {
+        firstName: firstName,
+        lastName: lastName,
+        salary: salary
+      };
+       // console.log(newEmpl);
+          // while.step.3.1 add new element ('newEmpl' type of object) to the end 
+          // off the array ('newEmpLArray'). So we adding a new element to our array.
+          // Resault: we got info for a new line in a table that contains 
+          // Fist Name, Last Name and Salary of a new Employee. 
+       newEmpLArray.push(newEmpl);
+    // else return to a sonst 'newEmpl' (type of object) salary = 0, because user's input was not a nuber):  
+    } else {
+      const newEmpl = {
+        firstName: firstName,
+        lastName: lastName,
+        salary: "0"
+      };
+       // console.log(newEmpl);
+          // while.step.3.2 add new element ('newEmpl' type of object) to the end 
+          // off the array ('newEmpLArray'). So we adding a new element to our array.
+          // Resault: we got info for a new line in a table that contains 
+          // Fist Name, Last Name and Salary of a new Employee. 
+      newEmpLArray.push(newEmpl);
     };
 
-     // while.step.3 add new element ('newEmpl' type of object) to the end 
-     // off the array ('newEmpLArray'). So we adding a new element to our array.
-     // Resault: we got info for a new line in a table that contains 
-     // Fist Name, Last Name and Salary of a new Employee. 
-     newEmpLArray.push(newEmpl);
-     //console.log(newEmpLArray);
-
-     // while.step.4 ask a user if a there ia a next new Employee who should be added
-     // if user input is 'y' (variable 'a' got a new value of 'y') then 
-     // steps##1-4 will be repeated again;
-     // if user input is not 'y' (variable 'a' got a new value than is not 'y') then
-     // 'while (a === "y") {}' is done and next step of code will be executed  (which
-     // is 'return newEmpLArray;' of 'collectEmployees = function()' ).
+     // This is the while-loop code end. User may choose 'addNewEmpl = true/faulse by  
+     // clicking on the buttons "ok" or "cancel"
      addNewEmpl = window.confirm("Wuold you like to add one more employeer?");
-     console.log(addNewEmpl);
-  }
+  //   console.log(addNewEmpl);
+  };
 
   // return to the 'const collectEmployees' the value of 
   // array 'newEmpLArray' which is the final updated list of Employees as for now.
     return newEmpLArray;
-}
+};
 
 
 
