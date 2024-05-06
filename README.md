@@ -17,3 +17,5 @@ Employee Payroll Tracker (Java Script starter code modification)
 #### WHEN I choose to cancel
 #### THEN my employee data is displayed on the page sorted alphabetically by last name, and the console shows computed and aggregated data
 
+## Screen Shot of a WebPage
+![WebPage as it looks like](https://github.com/MarynaMartseniuk/Employee-Payroll-Tracker-ch03/blob/main/website%20screen-shot.png)
