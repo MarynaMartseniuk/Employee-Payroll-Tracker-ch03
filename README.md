@@ -20,6 +20,9 @@ Employee Payroll Tracker (Java Script starter code modification)
 ## Screen Shot of a WebPage
 ![WebPage as it looks like](https://github.com/MarynaMartseniuk/Employee-Payroll-Tracker-ch03/blob/main/website%20screen-shot.png)
 
+## Website can be reached by this link:  
+#### https://marynamartseniuk.github.io/Employee-Payroll-Tracker-ch03/
+
 ## Sours of a code:
 #### 1. bootcamp tasks
 #### 2. for random employeer choice:
