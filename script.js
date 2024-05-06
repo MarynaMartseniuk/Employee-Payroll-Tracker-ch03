@@ -6,6 +6,7 @@ let employeesArray = [];
 // Collect employee data
 const collectEmployees = function() {
    // TODO: Get user input to create and return an array of employee objects
+   
   let addNewEmpl = true; // 'addNewEmpl = true' for user wants to add anew employee.
  
    // while user did not change 'addNewEmpl = true' , keep getting input 
@@ -21,8 +22,6 @@ const collectEmployees = function() {
      
      // while.step.2 convert "salary" string type value into number type value.
     const convrtSalary = Number(salary);
-     // console.log(typeof convrtSalary);
-     // console.log(convrtSalary);
 
      // while.step.3 if value of a salary from the user input is 
      // eqeul to the convert value (example: "1" equel 1), 
@@ -33,12 +32,12 @@ const collectEmployees = function() {
         lastName: lastName,
         salary: convrtSalary
       };
-       // console.log(newEmpl);
           // while.step.3.1 add new element ('newEmpl' type of object) to the end 
           // off the array ('newEmpLArray'). So we adding a new element to our array.
           // Resault: we got info for a new line in a table that contains 
           // Fist Name, Last Name and Salary of a new Employee. 
        employeesArray.push(newEmpl);
+
     // else return to a sonst 'newEmpl' (type of object) salary = 0, because user's input was not a nuber):  
     } else {
       const newEmpl = {
@@ -46,7 +45,6 @@ const collectEmployees = function() {
         lastName: lastName,
         salary: 0
       };
-       // console.log(newEmpl);
           // while.step.3.2 add new element ('newEmpl' type of object) to the end 
           // off the array ('newEmpLArray'). So we adding a new element to our array.
           // Resault: we got info for a new line in a table that contains 
@@ -57,12 +55,10 @@ const collectEmployees = function() {
      // This is the while-loop code end. User may choose 'addNewEmpl = true/faulse by  
      // clicking on the buttons "ok" or "cancel"
      addNewEmpl = window.confirm("Wuold you like to add one more employeer?");
-  //   console.log(addNewEmpl);
   };
 
   // return to the 'const collectEmployees' the value of 
   // array 'newEmpLArray' which is the final updated list of Employees as for now.
-  // console.log(employeesArray); 
   return employeesArray;
 };
 
@@ -71,6 +67,7 @@ const collectEmployees = function() {
 const displayAverageSalary = function(employeesArray) {
   
    // TODO: Calculate and display the average salary
+
    // count salary summary. Using "for-loop" get salary summary for
    // all employees and store it in "sumSalary" variable.
   let prevSalary = 0;
@@ -88,48 +85,46 @@ const displayAverageSalary = function(employeesArray) {
 
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
+
   // TODO: Select and display a random employee
 
-// To get random number from between numbers  (min, max) of your choice
-// The maximum is inclusive and the minimum is inclusive
+// make this work instead of tree "if-loops" below
+   // To get random number from between numbers  (min, max) of your choice
+   // The maximum is inclusive and the minimum is inclusive
 
-//  function getRandomIntInclusive(min, max) {
-//    const minCeiled = 1;
-//    const maxFloored = employeesArray.length;
-//    let x = Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled); 
-//    console.log(x);
-//  }
-//  console.log(`Congraulations to ${employeesArray[x-1].firstName} ${employeesArray[x-1].lastName}`);
+   //  function getRandomIntInclusive(min, max) {
+   //    const minCeiled = 1;
+   //    const maxFloored = employeesArray.length;
+   //    let x = Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled); 
+   //    console.log(x);
+   //  }
+   //  console.log(`Congraulations to ${employeesArray[x-1].firstName} ${employeesArray[x-1].lastName}`);
 
-// for list of "Employee <= 10" persons
+   // for list of "Employee <= 10" persons
   if (employeesArray.length <= 10) {
     // get random x. The value could be "1 <= x <=10"
     let x = Math.floor((Math.random() * 10) + 1);
-    // console.log(x);
-
     // if "x > then employee quantity", then find "x <= employee quantity" using
     // while-loop: keep getting new x and stop if "x <= employee quantity".
-      while (x > employeesArray.length) {
-        x = Math.floor((Math.random() * 10) + 1);
-        //console.log(x);
-      };
+    while (x > employeesArray.length) {
+      x = Math.floor((Math.random() * 10) + 1);
+    };
     // log to consol random employee with the position in employeesArray of x-1.
     // emlployee will be choose from the table after AddNewEmployee is done and before
     // new employees' data get sorted in alphabetical oreder.
     console.log(`Congraulations to ${employeesArray[x-1].firstName} ${employeesArray[x-1].lastName},
     our rendom drawing winner!`);
 
-// for list of "Employee > 100" persons
+   // for list of "Employee > 100" persons
   } else if (employeesArray.length > 100) {
     let x = Math.floor((Math.random() * 1000) + 1);
-    // console.log(x);
-      while (x > employeesArray.length) {
-        x = Math.floor((Math.random() * 1000) + 1);
-        // console.log(x);
-      };
+    while (x > employeesArray.length) {
+      x = Math.floor((Math.random() * 1000) + 1);
+    };
     console.log(`Congraulations to ${employeesArray[x-1].firstName} ${employeesArray[x-1].lastName},
     our rendom drawing winner!`);
-//  for list of "10 < Employee <= 100" persons
+
+   //  for list of "10 < Employee <= 100" persons
   } else {
     let x = Math.floor((Math.random() * 100) + 1);
     console.log(x);
@@ -141,6 +136,7 @@ const getRandomEmployee = function(employeesArray) {
     our rendom drawing winner!`);
   }
 };
+
 /*
   ====================
   STARTER CODE
