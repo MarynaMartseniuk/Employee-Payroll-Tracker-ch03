@@ -1,6 +1,6 @@
 // Get a reference to the #add-employees-btn element
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
-let newEmpLArray = [];
+let employeesArray = [];
 // console.log(newEmpLArray);
 
 // Collect employee data
@@ -38,7 +38,7 @@ const collectEmployees = function() {
           // off the array ('newEmpLArray'). So we adding a new element to our array.
           // Resault: we got info for a new line in a table that contains 
           // Fist Name, Last Name and Salary of a new Employee. 
-       newEmpLArray.push(newEmpl);
+       employeesArray.push(newEmpl);
     // else return to a sonst 'newEmpl' (type of object) salary = 0, because user's input was not a nuber):  
     } else {
       const newEmpl = {
@@ -51,7 +51,7 @@ const collectEmployees = function() {
           // off the array ('newEmpLArray'). So we adding a new element to our array.
           // Resault: we got info for a new line in a table that contains 
           // Fist Name, Last Name and Salary of a new Employee. 
-      newEmpLArray.push(newEmpl);
+      employeesArray.push(newEmpl);
     };
 
      // This is the while-loop code end. User may choose 'addNewEmpl = true/faulse by  
@@ -62,14 +62,24 @@ const collectEmployees = function() {
 
   // return to the 'const collectEmployees' the value of 
   // array 'newEmpLArray' which is the final updated list of Employees as for now.
-    return newEmpLArray;
+  // console.log(employeesArray); 
+  return employeesArray;
 };
-
 
 
 // Display the average salary
 const displayAverageSalary = function(employeesArray) {
-  // TODO: Calculate and display the average salary
+  
+   // TODO: Calculate and display the average salary
+   // count salary summary:
+   let prevSalary = 0;
+   let sumSalary = 0;
+  for (let i = 0; i < employeesArray.length; i++) {
+    sumSalary = prevSalary + employeesArray[i].salary;
+  }
+  console.log(`the avarage employee salary 
+  between our ${employeesArray.length} employee(s) 
+  is $ ${(sumSalary/employeesArray.length).toFixed(2)}.`);
 }
 
 // Select a random employee
